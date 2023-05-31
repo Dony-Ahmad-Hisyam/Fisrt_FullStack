@@ -1,0 +1,256 @@
+//create admin
+POST http://localhost:5000/admin HTTP/1.1
+Content-Type: application/json
+
+{
+    "nama": "Vinz",
+    "email": "admin1@gmail.com",
+    "password": "12345",
+   "confPassword": "12345"
+}
+
+//get all admin
+###
+GET http://localhost:5000/admin HTTP/1.1
+
+###
+//get single admin
+GET http://localhost:5000/admin/0065b452-6233-4223-b4d1-e37b185aab48 HTTP/1.1
+
+###
+//update a admin
+PATCH http://localhost:5000/admin/0065b452-6233-4223-b4d1-e37b185aab48 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nama": "SamTole",
+    "email": "admin1@gmail.com",
+    "password": "",
+   "confPassword": ""
+}
+
+###
+GET http://localhost:5000/tindakan
+
+###
+//deleted a admin
+DELETE http://localhost:5000/admin/4a18325f-28ae-48da-af1d-3fd602a30975 HTTP/1.1
+
+###
+//Login admin
+POST http://localhost:5000/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "admin1@gmail.com",
+    "password": "12345"
+}
+
+###
+//session a admin
+GET http://localhost:5000/me HTTP/1.1
+
+###
+//logout
+DELETE http://localhost:5000/logout HTTP/1.1
+
+###
+//create pelayanan
+POST http://localhost:5000/pelayanan HTTP/1.1
+Content-Type: application/json
+
+{
+    "nama": "Pembuatan SKCK",
+    "deskripsi": "Permohonan pembuatan Surat Keterangan Catatan Kepolisian (SKCK) untuk keperluan administrasi. SKCK diperlukan sebagai persyaratan dalam berbagai hal seperti melamar pekerjaan, mengajukan visa, mendaftar pendidikan, atau keperluan hukum lainnya."
+}
+
+###
+//get all pelayanan
+GET http://localhost:5000/pelayanan HTTP/1.1
+
+
+###
+//get byId pelayanan
+GET http://localhost:5000/pelayanan/44c911bd-a77a-4e1c-a963-affcbfea9de1 HTTP/1.1
+
+###
+//update a pelayanan
+PATCH http://localhost:5000/pelayanan/44c911bd-a77a-4e1c-a963-affcbfea9de1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nama": "Pembuatan SIM",
+    "deskripsi": "Pembuatan SIM adalah proses penerbitan dokumen resmi yang memberikan izin kepada seseorang untuk mengemudi kendaraan. Ini melibatkan pendaftaran, verifikasi identitas, tes, dan pembayaran biaya."
+}
+
+###
+//deleted a pelayanan
+DELETE http://localhost:5000/pelayanan/552f9785-3099-4e17-a53b-89032f98323c HTTP/1.1
+###
+
+
+//create petugas
+POST http://localhost:5000/petugas HTTP/1.1
+Content-Type: application/json
+
+{
+    "nama": "Deddy Dwi Waskito",
+    "jabatan": "Ketua POLANTAS Bintaro"
+}
+
+###
+//get all petugas
+GET http://localhost:5000/petugasAdmin HTTP/1.1
+
+###
+//get byId petugas
+GET http://localhost:5000/petugasAdmin/01ed1ee0-3aff-459e-aa9b-e121a5a7de9c HTTP/1.1
+
+###
+//update a petugas
+PATCH http://localhost:5000/petugas/a263cef1-080a-4512-8070-55c16a63c05e HTTP/1.1
+Content-Type: application/json
+
+{
+    "nama": "Setio Susanto",
+    "jabatan": "POLRES Bintaro"
+}
+
+
+###
+//deleted a petugas
+DELETE http://localhost:5000/petugas/2e9e9e83-ecb4-451f-8ba8-f24299a5de7e HTTP/1.1
+
+###
+//create pemohon
+POST http://localhost:5000/pemohon HTTP/1.1
+Content-Type: application/json
+
+{
+    "nama": "Lukaku Sakit 5",
+    "email": "pemohon1@gmail.com",
+    "alamat": "Surabaya",
+    "no_telp": "089679786979",
+    "conNo_telp": "089679786979"
+}
+
+###
+//get all pemohon
+GET http://localhost:5000/pemohonAdmin HTTP/1.1
+
+
+###
+//get byId pemohon
+GET http://localhost:5000/pemohon/dd766c0c-0b66-4498-8b6d-fb82040b4eec HTTP/1.1
+
+###
+//update a pemohon
+PATCH http://localhost:5000/pemohon/dd766c0c-0b66-4498-8b6d-fb82040b4eec HTTP/1.1
+Content-Type: application/json
+
+{
+    "nama": "Lukaku Sakit Updated 2",
+    "email": "pemohon1@gmail.com",
+    "alamat": "Surabaya",
+    "no_telp": "089679786979",
+     "conNo_telp": "089679786979"
+}
+
+
+###
+//deleted a pemohon
+DELETE http://localhost:5000/pemohon/cfabfa91-b4b3-43fc-b9a2-2e8cc2b91e3d HTTP/1.1
+
+###
+//Login pemohon
+POST http://localhost:5000/loginP HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "pemohon1@gmail.com",
+    "no_telp": "123"
+  
+}
+
+###
+//session a pemohon
+GET http://localhost:5000/meP HTTP/1.1
+
+###
+//logout
+DELETE http://localhost:5000/logoutP HTTP/1.1
+
+
+###
+//create permohonan
+POST http://localhost:5000/permohonanAdmin HTTP/1.1
+Content-Type: application/json
+
+{
+    "status": "Proses",
+    "pelayananId": "3",
+    "pemohonId": "3",
+    "keterangan": "Cepat",
+    "tanggal_permohonan":"21-05-2023"
+}
+
+###
+//get all permohonan
+GET http://localhost:5000/permohonan HTTP/1.1
+
+
+###
+//get byId permohonan
+GET http://localhost:5000/permohonan/d7c1e7cb-7307-49af-b5a0-42f3c591512f HTTP/1.1
+
+###
+//update a permohonan
+PATCH http://localhost:5000/permohonan/d7c1e7cb-7307-49af-b5a0-42f3c591512f HTTP/1.1
+Content-Type: application/json
+
+{
+    "status": "Sukses",
+    "pelayananId": "3",
+    "pemohonId": "1",
+    "keterangan": "Santai",
+    "tanggal_permohonan":"21-05-2023"
+}
+
+
+
+###
+//create tindakan
+POST http://localhost:5000/tindakanAdmin HTTP/1.1
+Content-Type: application/json
+
+{
+   "tanggal_Tindakan": "12-12-1212",
+    "status": "Proses",
+    "PermohonanId": "4",
+    "PetugasId": "2",
+    "keterangan": "keterangan",
+}
+
+###
+//get all tindakan
+GET http://localhost:5000/tindakan HTTP/1.1
+
+
+###
+//get byId tindakan
+GET http://localhost:5000/tindakan/f188474a-25ff-4495-9af0-237210362417 HTTP/1.1
+
+###
+//update a tindakan
+PATCH http://localhost:5000/tindakan/f188474a-25ff-4495-9af0-237210362417 HTTP/1.1
+Content-Type: application/json
+
+{
+    "petugasId": "1",
+    "PermohonanId": "2",
+    "status": "Proses",
+    "keterangan": "Santai",
+    "tanggal_Tindakan":"19-05-2023"
+}
+
+
